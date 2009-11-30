@@ -5,11 +5,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "hoptoad-notifier"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Generic Hoptoad Notifications and an adapter for merb"
+    gem.description = %q{
+      Provides a Module to handle sending notifications to hoptoad.
+
+      Currently includes a Merb adapter, but the intention is to add more later.
+    }
     gem.email = "glenjamin@gmail.com"
     gem.homepage = "http://github.com/glenjamin/hoptoad-notifier"
     gem.authors = ["Glen Mailer"]
+    gem.add_dependency "builder", ">= 2.0.0"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

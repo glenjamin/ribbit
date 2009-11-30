@@ -1,9 +1,14 @@
 = hoptoad-notifier
 
-Description goes here.
+This Hoptoad Notifier attempts to remove anything rails specific from the
+original notifier released by Thoughtbot.
+
+My intention is to have a completely rails-free core - and then provide
+adapters for popular frameworks - firstly Merb as thats what I'm using,
+and then subsequently things like Rails and Rack.
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a

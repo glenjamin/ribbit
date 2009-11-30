@@ -1,7 +1,8 @@
 ## MAC OS
 .DS_Store
 
-## TEXTMATE
+## EDITOR
+*.kpf
 *.tmproj
 tmtags
 
