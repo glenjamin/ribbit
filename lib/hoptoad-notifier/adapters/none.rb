@@ -1,3 +1,5 @@
+require 'logger'
+
 module HoptoadNotifier
   module Adapters
     class None < Adapter
@@ -9,7 +11,7 @@ module HoptoadNotifier
 
       # This should perform the steps to integrate hoptoad catching into the framework
       def activate!
-        
+
       end
 
     end

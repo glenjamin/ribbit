@@ -85,7 +85,7 @@ module HoptoadNotifier
       self.action              = args[:action]
 
       self.environment_name = args[:environment_name]
-      self.cgi_data         = args[:cgi_data]
+      self.cgi_data         = args[:cgi_data] || ENV
       self.backtrace        = Backtrace.parse(exception_attribute(:backtrace, caller))
       self.error_class      = exception_attribute(:error_class) {|exception| exception.class.name }
       self.error_message    = exception_attribute(:error_message, 'Notification') do |exception|
@@ -121,24 +121,24 @@ module HoptoadNotifier
         if url ||
             controller ||
             action ||
-            !parameters.blank? ||
-            !cgi_data.blank? ||
-            !session_data.blank?
+            !parameters.empty? ||
+            !cgi_data.empty? ||
+            !session_data.empty?
           notice.request do |request|
             request.url(url)
             request.component(controller)
             request.action(action)
-            unless parameters.blank?
+            unless parameters.empty?
               request.params do |params|
                 xml_vars_for(params, parameters)
               end
             end
-            unless session_data.blank?
+            unless session_data.empty?
               request.session do |session|
                 xml_vars_for(session, session_data)
               end
             end
-            unless cgi_data.blank?
+            unless cgi_data.empty?
               request.tag!("cgi-data") do |cgi_datum|
                 xml_vars_for(cgi_datum, cgi_data)
               end
@@ -231,7 +231,7 @@ module HoptoadNotifier
           clean_unserializable_data(value)
         end
       else
-        data.inspect
+        data.to_s
       end
     end
 
@@ -272,6 +272,8 @@ module HoptoadNotifier
       hash.each do |key, value|
         if value.respond_to?(:to_hash)
           builder.var(:key => key){|b| xml_vars_for(b, value.to_hash) }
+        elsif value.respond_to?(:to_ary)
+          builder.var("[" << (value.map { |v| v.to_s } * ", ") << "]", :key => key)
         else
           builder.var(value.to_s, :key => key)
         end
