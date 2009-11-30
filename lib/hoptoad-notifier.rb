@@ -1,7 +1,7 @@
-require 'hoptoad_notifier/configuration'
-require 'hoptoad_notifier/notice'
-require 'hoptoad_notifier/sender'
-require 'hoptoad_notifier/backtrace'
+require 'hoptoad-notifier/configuration'
+require 'hoptoad-notifier/notice'
+require 'hoptoad-notifier/sender'
+require 'hoptoad-notifier/backtrace'
 require 'hoptoad-notifier/adapters'
 
 module HoptoadNotifier

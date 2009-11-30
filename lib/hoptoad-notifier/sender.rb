@@ -41,9 +41,10 @@ module HoptoadNotifier
 
       case response
       when Net::HTTPSuccess then
-        log :info, "Success: #{response.class}", response
+        log :info, "Success: #{response.class}"
       else
-        log :error, "Failure: #{response.class}", response
+        log :error, "Failure: #{response.class}"
+        log :error, "Response Body: #{response.body}"
       end
     end
 
@@ -56,10 +57,8 @@ module HoptoadNotifier
       URI.parse("#{protocol}://#{host}:#{port}").merge(NOTICES_URI)
     end
 
-    def log(level, message, response = nil)
+    def log(level, message)
       logger.send level, LOG_PREFIX + message if logger
-      HoptoadNotifier.report_environment_info
-      HoptoadNotifier.report_response_body(response.body) if response && response.respond_to?(:body)
     end
 
     def logger

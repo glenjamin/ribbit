@@ -10,10 +10,11 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Glen Mailer"]
   s.date = %q{2009-11-30}
-  s.description = %q{      Provides a Module to handle sending notifications to hoptoad.
+  s.description = %q{
+      Provides a Module to handle sending notifications to hoptoad.
 
       Currently includes a Merb adapter, but the intention is to add more later.
-}
+    }
   s.email = %q{glenjamin@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -26,7 +27,15 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "hoptoad-notifier.gemspec",
      "lib/hoptoad-notifier.rb",
+     "lib/hoptoad-notifier/adapters.rb",
+     "lib/hoptoad-notifier/adapters/adapter.rb",
+     "lib/hoptoad-notifier/adapters/merb.rb",
+     "lib/hoptoad-notifier/backtrace.rb",
+     "lib/hoptoad-notifier/configuration.rb",
+     "lib/hoptoad-notifier/notice.rb",
+     "lib/hoptoad-notifier/sender.rb",
      "spec/hoptoad-notifier_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"

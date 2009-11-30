@@ -1,6 +1,6 @@
 module HoptoadNotifier
   module Adapters
-    class Merb
+    class Merb < Adapter
 
       def initialize(config)
         super(config)
