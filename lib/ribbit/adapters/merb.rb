@@ -25,7 +25,7 @@ module Ribbit
       module ControllerMixin
         protected
 
-        def notify_hoptoad(ex)
+        def notify_hoptoad(ex=nil)
           exceptions = request.execeptions || [ex]
           execeptions.each do |exeception|
             Ribbit.notify(exeception, {

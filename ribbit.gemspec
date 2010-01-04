@@ -27,6 +27,18 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/hoptoad-notifier.rb",
+     "lib/ribbit.rb",
+     "lib/ribbit/adapters.rb",
+     "lib/ribbit/adapters/adapter.rb",
+     "lib/ribbit/adapters/merb.rb",
+     "lib/ribbit/adapters/none.rb",
+     "lib/ribbit/backtrace.rb",
+     "lib/ribbit/configuration.rb",
+     "lib/ribbit/notice.rb",
+     "lib/ribbit/sender.rb",
+     "ribbit.gemspec",
+     "spec/ribbit_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
