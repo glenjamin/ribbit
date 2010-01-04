@@ -1,4 +1,4 @@
-= hoptoad-notifier
+= Ribbit
 
 This Hoptoad Notifier attempts to remove anything rails specific from the
 original notifier released by Thoughtbot.

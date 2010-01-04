@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "hoptoad-notifier"
+    gem.name = "ribbit"
     gem.summary = "Generic Hoptoad Notifications and an adapter for merb"
     gem.description = %q{
       Provides a Module to handle sending notifications to hoptoad.
@@ -44,7 +44,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "hoptoad-notifier #{version}"
+  rdoc.title = "ribbit #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
