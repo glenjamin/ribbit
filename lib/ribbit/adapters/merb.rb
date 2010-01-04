@@ -26,9 +26,9 @@ module Ribbit
         protected
 
         def notify_hoptoad(ex=nil)
-          exceptions = request.execeptions || [ex]
-          execeptions.each do |exeception|
-            Ribbit.notify(exeception, {
+          exceptions = request.exceptions || [ex]
+          exceptions.each do |exception|
+            Ribbit.notify(exception, {
               :parameters => params,
               :session => session,
               :controller => params[:controller],

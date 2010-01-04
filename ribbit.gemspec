@@ -5,9 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ribbit}
-  s.version = "0.1.0.dev"
+  s.version = "0.1.0"
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Glen Mailer"]
   s.date = %q{2010-01-04}
   s.description = %q{
@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/hoptoad-notifier.rb",
      "lib/ribbit.rb",
      "lib/ribbit/adapters.rb",
      "lib/ribbit/adapters/adapter.rb",
