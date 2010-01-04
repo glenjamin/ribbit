@@ -3,19 +3,27 @@ require 'hoptoad-notifier/notice'
 require 'hoptoad-notifier/sender'
 require 'hoptoad-notifier/backtrace'
 require 'hoptoad-notifier/adapters'
+require 'hoptoad-notifier/adapters/adapter'
 
 module HoptoadNotifier
   CLIENT_NAME = "Glenjamin's Hoptoad Notifier"
-  VERSION = File.open(File.join(File.dirname(__FILE__), '../../VERSION')).read().strip()
+  VERSION = "0.1.0.dev"
   API_VERSION = "2.0"
   LOG_PREFIX = "** [Hoptoad] "
 
   class << self
+    # The sender object is responsible for delivering formatted data to the Hoptoad server.
+    # Must respond to #send_to_hoptoad. See HoptoadNotifier::Sender.
+    attr_accessor :sender
+
+    # A Hoptoad configuration object. Must act like a hash and return sensible
+    # values for all Hoptoad configuration options. See HoptoadNotifier::Configuration.
+    attr_accessor :configuration
 
     # The adapter allows different things to happen on different environments
     # Basicially we proxy some methods through to subclasses of
     # HoptoadNotifier::Adapters::Adapter
-    attribute_accessor :adapter
+    attr_accessor :adapter
 
     # Collection of all existing adapters
     def adapters
