@@ -42,10 +42,9 @@ module HoptoadNotifier
       case response
       when Net::HTTPSuccess then
         log :info, "Success: #{response.class}"
-        log :debug, "Response Body: #{response.body}"
       else
         log :error, "Failure: #{response.class}"
-        log :debug, "Response Body: #{response.body}"
+        log :error, "Response Body: #{response.body}"
       end
     end
 

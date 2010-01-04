@@ -2,13 +2,12 @@ module HoptoadNotifier
   # Used to set up and modify settings for the notifier.
   class Configuration
 
-    OPTIONS = [:adapter, :api_key, :automatic, :backtrace_filters,
-        :development_environments, :development_lookup, :environment_filters,
-        :environment_name, :host, :http_open_timeout, :http_read_timeout,
-        :ignore, :ignore_by_filters, :ignore_user_agent, :notifier_name,
-        :notifier_url, :notifier_version, :params_filters, :project_root,
-        :port, :protocol, :proxy_host, :proxy_pass, :proxy_port, :proxy_user,
-        :secure].freeze
+    OPTIONS = [:api_key, :backtrace_filters, :development_environments,
+        :development_lookup, :environment_filters, :environment_name, :host,
+        :http_open_timeout, :http_read_timeout, :ignore, :ignore_by_filters,
+        :ignore_user_agent, :notifier_name, :notifier_url, :notifier_version,
+        :params_filters, :project_root, :port, :protocol, :proxy_host,
+        :proxy_pass, :proxy_port, :proxy_user, :secure].freeze
 
     # The API key for your project, found on the project edit form.
     attr_accessor :api_key
@@ -73,9 +72,6 @@ module HoptoadNotifier
 
     # The name of the environment the application is running in
     attr_accessor :environment_name
-
-    # The adapter to use to plug functionality into the parent application
-    attr_accessor :adapter
 
     # The path to the project in which the error occurred, such as the RAILS_ROOT
     attr_accessor :project_root

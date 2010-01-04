@@ -5,9 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hoptoad-notifier}
-  s.version = "0.1.0.dev"
+  s.version = ""
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Glen Mailer"]
   s.date = %q{2009-11-30}
   s.description = %q{
@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
      "lib/hoptoad-notifier/adapters.rb",
      "lib/hoptoad-notifier/adapters/adapter.rb",
      "lib/hoptoad-notifier/adapters/merb.rb",
-     "lib/hoptoad-notifier/adapters/none.rb",
      "lib/hoptoad-notifier/backtrace.rb",
      "lib/hoptoad-notifier/configuration.rb",
      "lib/hoptoad-notifier/notice.rb",
