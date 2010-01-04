@@ -4,10 +4,6 @@ module HoptoadNotifier
 
       attr_accessor :adapters
 
-      def adapters
-        @adapters ||= []
-      end
-
       # Register a new adapter - you do not need to call this directly if subclassing Adapter
       def add_adapter(adapter)
         self.adapters << adapter
@@ -22,7 +18,7 @@ module HoptoadNotifier
       private
 
       def adapter_path(name)
-        name = name.to_s.downcase
+        name = name.to_s.lower
         File.join(File.dirname(__FILE__), 'adapters', "#{name}.rb")
       end
 
