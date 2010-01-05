@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "hoptoad-ribbit.gemspec",
      "lib/ribbit.rb",
      "lib/ribbit/adapters.rb",
      "lib/ribbit/adapters/adapter.rb",
@@ -36,7 +37,6 @@ Gem::Specification.new do |s|
      "lib/ribbit/configuration.rb",
      "lib/ribbit/notice.rb",
      "lib/ribbit/sender.rb",
-     "ribbit.gemspec",
      "spec/ribbit_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
