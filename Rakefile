@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ribbit"
+    gem.name = "hoptoad-ribbit"
     gem.summary = "Generic Hoptoad Notifications and an adapter for merb"
     gem.description = %q{
       Provides a Module to handle sending notifications to hoptoad.
