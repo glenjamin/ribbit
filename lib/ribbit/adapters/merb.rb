@@ -33,7 +33,7 @@ module Ribbit
               :session => session,
               :controller => params[:controller],
               :action => params[:action],
-              :url => absolute_url(:this),
+              :url => request.full_uri,
               :cgi_data => ENV.to_hash.merge(request.env)
             })
           end
