@@ -270,7 +270,7 @@ module Ribbit
 
     def xml_vars_for(builder, hash)
       hash.each do |key, value|
-        if value.respond_to?(:to_hash)
+        if value.respond_to?(:each_pair) # [].to_hash is defined in merb's environment
           builder.var(:key => key){|b| xml_vars_for(b, value.to_hash) }
         elsif value.respond_to?(:to_ary)
           builder.var("[" << (value.map { |v| v.to_s } * ", ") << "]", :key => key)
